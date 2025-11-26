@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -25,9 +26,11 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
+            
             Vector3 position = new Vector3(0, 0, 0);
             transform.position += new Vector3(-1, 0, 0);
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            
 
         }
         if (Input.GetKey(KeyCode.D))
