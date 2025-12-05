@@ -15,10 +15,10 @@ public class movecloud : MonoBehaviour
         transform.position += new Vector3(1, 0, 0);
 
 
-        if (transform.position.x > 200000)
+        if (transform.position.x > 1000)
         {
             { 
-                transform.position = new Vector3(-215, 99, 0);
+                transform.position -= new Vector3(2000, 0, 0);
             }
         }
     }
