@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private float _speed = 5;
     [SerializeField] private string _coinTag = "Coin";
+    private int Coin = 0;
+    public TextMeshProUGUI score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -57,8 +60,12 @@ public class PlayerInput : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Coin++;
+        score.text = "Score: " + Coin.ToString();
         if (collision.gameObject.CompareTag(_coinTag))
         { Destroy(collision.gameObject); }
+       
+
     }
 }
 
