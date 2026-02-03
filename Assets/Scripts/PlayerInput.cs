@@ -4,11 +4,13 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private float _speed = 5;
     [SerializeField] private string _coinTag = "Coin";
+    [SerializeField] private TMP_Text _coinText;
     private int Coin = 0;
     public TextMeshProUGUI score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -60,11 +62,15 @@ public class PlayerInput : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Coin++;
+        
+        
+        if (collision.gameObject.CompareTag(_coinTag) )
+            
+        { Destroy(collision.gameObject); Coin++; }
         score.text = "Score: " + Coin.ToString();
-        if (collision.gameObject.CompareTag(_coinTag))
-        { Destroy(collision.gameObject); }
-       
+        
+        
+
 
     }
 }
