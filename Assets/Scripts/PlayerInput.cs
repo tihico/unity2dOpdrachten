@@ -28,7 +28,7 @@ public class PlayerInput : MonoBehaviour
         {
 
 
-            Console.WriteLine("ik heb W ingeclickt");
+            
             Vector3 position = new Vector3(0, 0, 0);
             transform.position += new Vector3(0, 1, 0);
             Rigidbody2D.SlideMovement.Equals(transform.position, position);
@@ -65,12 +65,15 @@ public class PlayerInput : MonoBehaviour
         
         
         if (collision.gameObject.CompareTag(_coinTag) )
-            
-        { Destroy(collision.gameObject); Coin++; }
-        score.text = "Score: " + Coin.ToString();
-        
-        
+        { 
+            Destroy(collision.gameObject); 
+            Coin++; 
+            score.text = "Score: " + Coin.ToString();
+        }
 
+
+
+       
 
     }
 }
