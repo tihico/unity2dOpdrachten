@@ -6179,7 +6179,7 @@ GameObject:
   - component: {fileID: 1468295377}
   m_Layer: 0
   m_Name: Square (11)
-  m_TagString: speedboost
+  m_TagString: speedUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6309,10 +6309,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1468295372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eae13b5f1613023499406cb32591386f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0df4dfc62adb5484288649630bfb1c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedboost: speedboost
+  _SpeedValue: 1
 --- !u!1 &1543620553
 GameObject:
   m_ObjectHideFlags: 0
@@ -7856,7 +7856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7340095079704013411, guid: a0f43b0f0fd300045bba087a2e671568, type: 3}
       propertyPath: _speed
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
