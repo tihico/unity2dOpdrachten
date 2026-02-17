@@ -14,6 +14,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private TMP_Text _coinText;
     [SerializeField] private string _SpeedUp = "speedUp";
     [SerializeField] private string _SpeedDown = "speedDown";
+    [SerializeField] private playerinputv2 _playerinput;
     private int Coin = 0;
     public TextMeshProUGUI score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,12 +30,12 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-
+            _playerinput.MovePlayer(Vector2.up);
 
             
-            Vector3 position = new Vector3(0, 0, 0);
-            transform.position += new Vector3(0, 1* _speed, 0);
-            Rigidbody2D.SlideMovement.Equals(transform.position, position);
+           // Vector3 position = new Vector3(0, 0, 0);
+           // transform.position += new Vector3(0, 1* _speed, 0);
+            // Rigidbody2D.SlideMovement.Equals(transform.position, position);
         }
         if (Input.GetKey(KeyCode.A))
         {
