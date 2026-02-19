@@ -30,12 +30,12 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            _playerinput.MovePlayer(Vector2.up);
+            
 
             
-           // Vector3 position = new Vector3(0, 0, 0);
-           // transform.position += new Vector3(0, 1* _speed, 0);
-            // Rigidbody2D.SlideMovement.Equals(transform.position, position);
+           Vector3 position = new Vector3(0, 0, 0);
+           transform.position += new Vector3(0, 1* _speed, 0);
+            Rigidbody2D.SlideMovement.Equals(transform.position, position);
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -48,8 +48,7 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.D))
         {
-            Vector3 position = new Vector3(0, 0, 0);
-            transform.position += new Vector3(1*_speed, 0, 0);
+            _playerinput.MovePlayer(Vector2.right);
 
 
         }
