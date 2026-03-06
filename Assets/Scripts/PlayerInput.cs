@@ -17,6 +17,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private playerinputv2 _playerinput;
     private int Coin = 0;
     public TextMeshProUGUI score;
+    private bool canJump = false;
+    public Rigidbody2D body;
+    private bool speedReduce = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,35 +31,45 @@ public class PlayerInput : MonoBehaviour
     {
 
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && canJump)
         {
-            
+            canJump = false;
+            body.linearVelocityY = 100;
 
-            
-           Vector3 position = new Vector3(0, 0, 0);
-           transform.position += new Vector3(0, 1* _speed, 0);
-            Rigidbody2D.SlideMovement.Equals(transform.position, position);
         }
+     
+
+
+
         if (Input.GetKey(KeyCode.A))
         {
 
-            Vector3 position = new Vector3(0, 0, 0);
-            transform.position += new Vector3(-1*_speed, 0, 0);
+            body.linearVelocityX = -75;
+            speedReduce = false;
+            //if (!Input.GetKey(KeyCode.A))
+            //{
+            //    speedReduce = true;
 
+            //}
+            while (!Input.GetKey(KeyCode.A))
+            {
+                body.linearVelocityX = body.linearVelocityX / 99;
+            }
+                
+
+                
 
 
         }
         if (Input.GetKey(KeyCode.D))
         {
-            _playerinput.MovePlayer(Vector2.right);
+            body.linearVelocityX = 75;
 
 
         }
         if (Input.GetKey(KeyCode.S))
         {
-            Vector3 position = new Vector3(0, 0, 0);
-            transform.position += new Vector3(0, -1*_speed, 0);
-
+            body.linearVelocityY = -75;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -83,9 +96,12 @@ public class PlayerInput : MonoBehaviour
 
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-   
+   if (collision.gameObject.CompareTag("Ground"))
+        {
+            canJump = true;
+        }
 
     }
 }
