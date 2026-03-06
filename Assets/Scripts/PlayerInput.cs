@@ -34,8 +34,7 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && canJump)
         {
             canJump = false;
-            body.linearVelocityY = 100;
-
+            _playerinput.JumpPlayer();
         }
      
 
