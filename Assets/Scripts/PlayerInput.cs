@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEditor.Rendering;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -20,21 +21,19 @@ public class PlayerInput : MonoBehaviour
     private bool canJump = false;
     public Rigidbody2D body;
     private bool speedReduce = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    public UnityEvent<Vector2> OnPlayerInputReceived = new UnityEvent<Vector2>();
+    public UnityEvent<Rigidbody2D> OnPlayerInputReceivedW = new UnityEvent<Rigidbody2D>();
 
-    }
 
     // Update is called once per frame
     void Update()
     {
 
 
-        if (Input.GetKeyDown(KeyCode.W) && canJump)
+        if (Input.GetKey(KeyCode.W) && canJump)
         {
             canJump = false;
-            _playerinput.JumpPlayer();
+            OnPlayerInputReceivedW.Invoke();
         }
      
 
@@ -43,32 +42,26 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
 
-            body.linearVelocityX = -75;
-            speedReduce = false;
+         //   body.linearVelocityX = -75;
+         //   speedReduce = false;
+            OnPlayerInputReceived.Invoke(Vector2.left);
             //if (!Input.GetKey(KeyCode.A))
             //{
             //    speedReduce = true;
 
             //}
-            while (!Input.GetKey(KeyCode.A))
-            {
-                body.linearVelocityX = body.linearVelocityX / 99;
-            }
-                
-
-                
-
-
+   
         }
         if (Input.GetKey(KeyCode.D))
         {
-            body.linearVelocityX = 75;
-
+           // body.linearVelocityX = 75;
+            OnPlayerInputReceived.Invoke(Vector2.right);
 
         }
         if (Input.GetKey(KeyCode.S))
         {
-            body.linearVelocityY = -75;
+            // body.linearVelocityY = -75;
+            OnPlayerInputReceived.Invoke(Vector2.down);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -4,7 +4,15 @@ public class playerinputv2 : MonoBehaviour
 {
     [SerializeField] private float _speed= 50;
     [SerializeField] private Rigidbody2D _rb;
-    [SerializeField] private float _jumpforce = 6;
+    [SerializeField] private float _jumpforce = 100;
+    [SerializeField] private PlayerInput _playerInput;
+
+
+    private void Start()
+    {
+        _playerInput.OnPlayerInputReceived.AddListener(MovePlayer);
+        _playerInput.OnPlayerInputReceivedW.AddListener(JumpPlayer);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void MovePlayer(Vector2 direction)
     {
