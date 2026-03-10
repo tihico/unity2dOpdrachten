@@ -11,7 +11,7 @@ public class playerinputv2 : MonoBehaviour
     private void Start()
     {
         _playerInput.OnPlayerInputReceived.AddListener(MovePlayer);
-        _playerInput.OnPlayerInputReceivedW.AddListener(JumpPlayer);
+         // _rb.OnPlayerInputReceivedW.AddListener(JumpPlayer);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void MovePlayer(Vector2 direction)
@@ -20,6 +20,6 @@ public class playerinputv2 : MonoBehaviour
     }
     public void JumpPlayer()
     {
-        _rb.linearVelocityY += _jumpforce;
+      //  _rb.linearVelocityY += _jumpforce;
     }
 }

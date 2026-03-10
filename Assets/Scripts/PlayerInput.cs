@@ -22,7 +22,7 @@ public class PlayerInput : MonoBehaviour
     public Rigidbody2D body;
     private bool speedReduce = false;
     public UnityEvent<Vector2> OnPlayerInputReceived = new UnityEvent<Vector2>();
-    public UnityEvent<Rigidbody2D> OnPlayerInputReceivedW = new UnityEvent<Rigidbody2D>();
+    public UnityEvent<Vector2> OnPlayerInputReceivedW = new UnityEvent<Vector2>();
 
 
     // Update is called once per frame
@@ -33,7 +33,8 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && canJump)
         {
             canJump = false;
-            OnPlayerInputReceivedW.Invoke();
+            // OnPlayerInputReceivedW.Invoke(MoveDirection.Up);
+            body.linearVelocityY = 200;
         }
      
 
