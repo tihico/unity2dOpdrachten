@@ -82,8 +82,8 @@ public class PlayerInput : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag(_SpeedDown))
         {
-
-
+            
+            Destroy(collision.gameObject);
 
 
 

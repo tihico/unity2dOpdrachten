@@ -4,7 +4,7 @@ public class playerinputv2 : MonoBehaviour
 {
     [SerializeField] private float _speed= 50;
     [SerializeField] private Rigidbody2D _rb;
-    [SerializeField] private float _jumpforce = 100;
+   // [SerializeField] private float _jumpforce = 100;
     [SerializeField] private PlayerInput _playerInput;
 
 
