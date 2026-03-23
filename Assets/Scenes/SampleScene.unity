@@ -2506,7 +2506,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 50
   _rb: {fileID: 1956223066}
-  _jumpforce: 6
   _playerInput: {fileID: 1956223068}
 --- !u!50 &1956223066 stripped
 Rigidbody2D:
@@ -2537,7 +2536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Bullet: {fileID: 4827211070801771700, guid: 4336e30d54873bd478c3aeae3bf8a328, type: 3}
-  _BulletTransform: {fileID: 2757938748542920104, guid: a0f43b0f0fd300045bba087a2e671568, type: 3}
+  _BulletSpawn: {fileID: 2757938748542920104, guid: a0f43b0f0fd300045bba087a2e671568, type: 3}
 --- !u!1001 &2981110798972075874
 PrefabInstance:
   m_ObjectHideFlags: 0
