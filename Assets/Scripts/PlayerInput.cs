@@ -61,8 +61,8 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.S))
         {
-            // body.linearVelocityY = -75;
-            OnPlayerInputReceived.Invoke(Vector2.down);
+           body.linearVelocityY = -75;
+            //OnPlayerInputReceived.Invoke(Vector2.down);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -82,7 +82,7 @@ public class PlayerInput : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag(_SpeedDown))
         {
-            
+            _speed += 50;
             Destroy(collision.gameObject);
 
 

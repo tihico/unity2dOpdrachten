@@ -12,13 +12,13 @@ public class movecloud : MonoBehaviour
     void Update()
     {
         Vector3 position = new Vector3(0, 0, 0);
-        transform.position += new Vector3(1, 0, 0) * Time.deltaTime;
+        transform.position += new Vector3(-1, 0, 0) * Time.deltaTime *150;
 
 
-        if (transform.position.x > 1000)
+        if (transform.position.x < -2000)
         {
-            { 
-                transform.position -= new Vector3(2000, 0, 0);
+            {
+                Destroy(gameObject);
             }
         }
     }

@@ -6,7 +6,7 @@ public class secondspeedscript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public int GetSpeedValue()
     {
-        _SpeedValue = 50;
+        _SpeedValue = 100;
         return _SpeedValue;
     }
 }
