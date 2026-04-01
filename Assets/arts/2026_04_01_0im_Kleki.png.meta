@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f66f86e18c87347448b54079cb37279b
+guid: 8d8e6da09aa32484383e08a0becb309e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -644248755037762936
-    second: 2025-08-17_17.26.15_0
+      213: 3057554320186482041
+    second: 2026_04_01_0im_Kleki_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,21 +37,21 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
-  spriteMeshType: 1
+  spriteExtrude: 0
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2025-08-17_17.26.15_0
+      name: 2026_04_01_0im_Kleki_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1366
-        height: 768
+        width: 20
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88a8cf0bb2b2f07f0800000000000000
-      internalID: -644248755037762936
+      spriteID: 97d1d20647d9e6a20800000000000000
+      internalID: 3057554320186482041
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7558287a4562a8f4bbe88cbbf138b24c
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      2025-08-17_17.26.15_0: -644248755037762936
+      2026_04_01_0im_Kleki_0: 3057554320186482041
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
