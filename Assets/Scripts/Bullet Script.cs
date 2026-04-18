@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.FilePathAttribute;
@@ -15,8 +16,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             {
-                Instantiate(_Bullet, transform.position, transform.rotation, _BulletSpawn);
-                _Bullet.transform.position = transform.position;
+                Instantiate(_Bullet, _BulletSpawn.position, _BulletSpawn.rotation);
+                //_Bullet.transform.position = transform.position;
                 Console.WriteLine("Bullet");
             }
 
