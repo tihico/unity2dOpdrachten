@@ -1,20 +1,36 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
 public class BulletMovement : MonoBehaviour
 
+
 {
-    [SerializeField] private GameObject _speed;
+    [SerializeField] private GameObject _Explosion;
+    [SerializeField] private int _SpeedValue;
     void Update()
     {
-        transform.Translate(Vector3.up * 200 * Time.deltaTime);
+        transform.Translate(Vector3.up * _SpeedValue * Time.deltaTime);
 
 
-        if (transform.position.x < -5000 || transform.position.y < -5000 || transform.position.x < 5000 || transform.position.y < 5000 )
+        if (transform.position.x < -20000 || transform.position.y < -20000 || transform.position.x > 20000 || transform.position.y > 20000)
         {
             {
-                //Destroy(gameObject);
+                Destroy(gameObject);
             }
         }
     }
-}
+            private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Instantiate(_Explosion, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
+       
+
+
+
+    }
+    }
+        

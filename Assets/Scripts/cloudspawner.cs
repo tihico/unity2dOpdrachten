@@ -20,14 +20,8 @@ public class CloudSpawner : MonoBehaviour
 
         Vector3 spawnPos = new Vector3(transform.position.x, randomY, transform.position.z);
 
-        Instantiate(_Cloud, spawnPos, transform.rotation);
-
-        
-            
-        }
-    
-        
-        
+        Instantiate(_Cloud, spawnPos, transform.rotation); 
+        }    
     }
 
 

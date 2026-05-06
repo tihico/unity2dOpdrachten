@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
+
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {

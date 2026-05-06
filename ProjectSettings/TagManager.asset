@@ -9,6 +9,9 @@ TagManager:
   - speedUp
   - Ground
   - Bullet
+  - speedDown
+  - Explosion
+  - Door
   layers:
   - Default
   - TransparentFX
