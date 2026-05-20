@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 
-
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
-using static UnityEngine.RuleTile.TilingRuleOutput;
+
 
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] public float _speed = 1;
     [SerializeField] private string _coinTag = "Coin";
-    [SerializeField] private string _healthTag = "Health";
+    
     [SerializeField] private TMP_Text _coinText;
     [SerializeField] private string _SpeedUp = "speedUp";
     [SerializeField] private string _SpeedDown = "speedDown";
     [SerializeField] private string _Explosion = "Explosion";
+    [SerializeField] private string _Boss = "Boss";
     [SerializeField] private playerinputv2 _playerinput;
-    [SerializeField] private UnityEngine.Transform SpawnLocation;
-    [SerializeField] private UnityEngine.Transform Hospital;
+    [SerializeField] private Transform SpawnLocation;
+    [SerializeField] private Transform Hospital;
+    [SerializeField] private Transform HospitalExit;
 
     private int Coin = 0;
     public int Health = 100;
@@ -92,8 +93,15 @@ public class PlayerInput : MonoBehaviour
     {
         secondspeedscript Speedup;
 
+        if (collision.gameObject.CompareTag(_Boss))
+        {
+            // instakill from boss
+            Health = Health - 101;
+            health.text = "Health: " + Health.ToString();
+        }
         if (collision.gameObject.CompareTag(_coinTag))
         {
+            // coin score
             Destroy(collision.gameObject);
             Coin++;
             score.text = "Score: " + Coin.ToString();
@@ -120,10 +128,22 @@ public class PlayerInput : MonoBehaviour
             SpawnLocation.position = Hospital.position;
             transform.position = Hospital.position;
         }
+        if (collision.gameObject.CompareTag("DoorExit"))
+        {
+            SpawnLocation.position = HospitalExit.position;
+            transform.position = HospitalExit.position;
+        }
+        if (collision.gameObject.CompareTag("Damage"))
+        {
+            Health = Health - 10;
+            health.text = "Health: " + Health.ToString();
+            
+        }
     }
     
 
-    void OnCollisionEnter2D(Collision2D collision)
+
+void OnCollisionEnter2D(Collision2D collision)
     {
    if (collision.gameObject.CompareTag("Ground"))
         {

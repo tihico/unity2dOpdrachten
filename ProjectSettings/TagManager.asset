@@ -12,6 +12,10 @@ TagManager:
   - speedDown
   - Explosion
   - Door
+  - DoorExit
+  - Boss
+  - background
+  - Damage
   layers:
   - Default
   - TransparentFX

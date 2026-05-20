@@ -27,10 +27,20 @@ public class BulletMovement : MonoBehaviour
             Instantiate(_Explosion, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
-       
+        if (collision.gameObject.CompareTag("Untagged"))
+        {
+            Instantiate(_Explosion, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            Instantiate(_Explosion, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
+
 
 
 
     }
-    }
+}
         
